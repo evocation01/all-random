@@ -1,0 +1,64 @@
+// Production Planning and Control
+digraph {
+	A [label=Start shape=ellipse]
+	subgraph cluster_intro {
+		label=Introduction
+		B [label="Select Industry and Product/Service" shape=parallelogram]
+		C [label="Describe Product/Service" shape=parallelogram]
+		B -> C
+	}
+	subgraph cluster_methods {
+		label="Methods Analysis"
+		D [label="Specify Tasks for Job" shape=parallelogram]
+		E [label="Draw Flow Diagram" shape=parallelogram]
+		F [label="Draw Process Chart" shape=parallelogram]
+		D -> E
+		E -> F
+	}
+	subgraph cluster_labour {
+		label="Labour Standards"
+		G [label="Identify Labour Standards" shape=parallelogram]
+		H [label="Define Task to be Studied" shape=parallelogram]
+		I [label="Divide Task into Elements" shape=parallelogram]
+		J [label="Decide Number of Measurements" shape=parallelogram]
+		K [label="Time and Record Elemental Times" shape=parallelogram]
+		L [label="Determine Performance Rating" shape=parallelogram]
+		M [label="Compute Normal Time" shape=parallelogram]
+		N [label="Identify and Specify Allowances" shape=parallelogram]
+		O [label="Compute Standard Time" shape=parallelogram]
+		P [label="Define Error Percentage and Significance Level" shape=parallelogram]
+		Q [label="Calculate Sample Size" shape=parallelogram]
+		G -> H
+		H -> I
+		I -> J
+		J -> K
+		K -> L
+		L -> M
+		M -> N
+		N -> O
+		O -> P
+		P -> Q
+	}
+	subgraph cluster_layout {
+		label="Layout Organization and Discussion"
+		R [label="Determine Layout Type" shape=parallelogram]
+		S [label="Create and Solve Layout Problem" shape=parallelogram]
+		T [label="Measure Layout Efficiency" shape=parallelogram]
+		U [label="Discuss Layout and Work Strategy" shape=parallelogram]
+		R -> S
+		S -> T
+		T -> U
+	}
+	D1 [label="Is Data Available?" shape=diamond]
+	D2 [label="Is Real Company Data Used?" shape=diamond]
+	A -> B
+	C -> D1
+	D1 -> D [label=Yes]
+	D1 -> D2 [label=No]
+	D2 -> D [label=Yes]
+	D2 -> D [label=No style=dashed]
+	F -> G
+	Q -> R
+	U -> V
+	V [label=End shape=ellipse]
+}

@@ -1,0 +1,17 @@
+// Decision Flow Diagram
+digraph {
+	A [label=Start shape=ellipse]
+	B [label="Is the material available?" shape=diamond]
+	C [label="Order Material" shape=parallelogram]
+	D [label="Is the material quality acceptable?" shape=diamond]
+	E [label="Reject Material" shape=parallelogram]
+	F [label="Proceed with Production" shape=rectangle]
+	G [label=End shape=ellipse]
+	A -> B
+	B -> C [label=No]
+	B -> D [label=Yes]
+	C -> B [label="Material Arrives"]
+	D -> E [label=No]
+	D -> F [label=Yes]
+	F -> G
+}

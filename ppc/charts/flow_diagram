@@ -1,0 +1,44 @@
+// EV Battery Production Flow Diagram
+digraph {
+	A [label="Raw Material Preparation"]
+	B [label="Electrode Production"]
+	C [label="Cell Assembly"]
+	D [label="Electrolyte Filling"]
+	E [label="Sealing and Formation"]
+	F [label="Cell Sorting and Matching"]
+	G [label="Module Casing Preparation"]
+	H [label="Cell Interconnection"]
+	I [label="Module Sealing"]
+	J [label="Module Arrangement"]
+	K [label="BMS Installation"]
+	L [label="Thermal Management System Installation"]
+	M [label="Final Assembly"]
+	N [label="Electrical Testing"]
+	O [label="Thermal Testing"]
+	P [label="Mechanical Testing"]
+	Q [label="Safety Testing"]
+	R [label="Packaging Design"]
+	S [label="Packaging Assembly"]
+	T [label=Labeling]
+	U [label="Shipping Preparation"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+	G -> H
+	H -> I
+	I -> J
+	J -> K
+	K -> L
+	L -> M
+	M -> N
+	N -> O
+	O -> P
+	P -> Q
+	Q -> R
+	R -> S
+	S -> T
+	T -> U
+}

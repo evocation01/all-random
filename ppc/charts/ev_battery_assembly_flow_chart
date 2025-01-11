@@ -1,0 +1,22 @@
+// EV Battery Assembly Process
+digraph {
+	"Cell Inspection" [label="Cell Inspection"]
+	"Cell Stacking" [label="Cell Stacking"]
+	Welding [label=Welding]
+	"Module Assembly" [label="Module Assembly"]
+	"Module Testing" [label="Module Testing"]
+	"Pack Assembly" [label="Pack Assembly"]
+	"Pack Testing" [label="Pack Testing"]
+	"Cooling System Installation" [label="Cooling System Installation"]
+	"Final Inspection" [label="Final Inspection"]
+	Packaging [label=Packaging]
+	"Cell Inspection" -> "Cell Stacking"
+	"Cell Stacking" -> Welding
+	Welding -> "Module Assembly"
+	"Module Assembly" -> "Module Testing"
+	"Module Testing" -> "Pack Assembly"
+	"Pack Assembly" -> "Pack Testing"
+	"Pack Testing" -> "Cooling System Installation"
+	"Cooling System Installation" -> "Final Inspection"
+	"Final Inspection" -> Packaging
+}

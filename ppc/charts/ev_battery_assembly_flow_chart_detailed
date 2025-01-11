@@ -1,0 +1,41 @@
+// EV Battery Assembly Process
+digraph {
+	Start [label=Start shape=ellipse]
+	"Cell Inspection" [label="Cell Inspection" shape=box]
+	"Inspection OK?" [label="Inspection OK?" shape=diamond]
+	"Cell Stacking" [label="Cell Stacking" shape=box]
+	Welding [label=Welding shape=box]
+	"Welding OK?" [label="Welding OK?" shape=diamond]
+	"Module Assembly" [label="Module Assembly" shape=box]
+	"Module Testing" [label="Module Testing" shape=box]
+	"Testing OK?" [label="Testing OK?" shape=diamond]
+	"Pack Assembly" [label="Pack Assembly" shape=box]
+	"Pack Testing" [label="Pack Testing" shape=box]
+	"Pack Quality OK?" [label="Pack Quality OK?" shape=diamond]
+	"Cooling System Installation" [label="Cooling System Installation" shape=box]
+	"Final Inspection" [label="Final Inspection" shape=box]
+	"Final Quality OK?" [label="Final Quality OK?" shape=diamond]
+	Packaging [label=Packaging shape=box]
+	End [label=End shape=ellipse]
+	Start -> "Cell Inspection"
+	"Cell Inspection" -> "Inspection OK?"
+	"Inspection OK?" -> "Cell Stacking" [label=yes]
+	"Inspection OK?" -> "Cell Inspection" [label=no]
+	"Cell Stacking" -> Welding
+	Welding -> "Welding OK?"
+	"Welding OK?" -> "Module Assembly" [label=yes]
+	"Welding OK?" -> Welding [label=no]
+	"Module Assembly" -> "Module Testing"
+	"Module Testing" -> "Testing OK?"
+	"Testing OK?" -> "Pack Assembly" [label=yes]
+	"Testing OK?" -> "Module Assembly" [label=no]
+	"Pack Assembly" -> "Pack Testing"
+	"Pack Testing" -> "Pack Quality OK?"
+	"Pack Quality OK?" -> "Cooling System Installation" [label=yes]
+	"Pack Quality OK?" -> "Pack Assembly" [label=no]
+	"Cooling System Installation" -> "Final Inspection"
+	"Final Inspection" -> "Final Quality OK?"
+	"Final Quality OK?" -> Packaging [label=yes]
+	"Final Quality OK?" -> "Final Inspection" [label=no]
+	Packaging -> End
+}

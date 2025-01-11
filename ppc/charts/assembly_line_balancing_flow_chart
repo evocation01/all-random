@@ -1,0 +1,42 @@
+// Assembly Line Balancing
+digraph {
+	Start [label=Start shape=ellipse]
+	"Station 1: Material Preparation
+Cycle Time: 5 min" [label="Station 1: Material Preparation
+Cycle Time: 5 min" shape=box]
+	"Station 2: Cutting
+Cycle Time: 10 min" [label="Station 2: Cutting
+Cycle Time: 10 min" shape=box]
+	"Station 3: Welding
+Cycle Time: 15 min" [label="Station 3: Welding
+Cycle Time: 15 min" shape=box]
+	"Station 4: Assembly
+Cycle Time: 20 min" [label="Station 4: Assembly
+Cycle Time: 20 min" shape=box]
+	"Station 5: Painting
+Cycle Time: 25 min" [label="Station 5: Painting
+Cycle Time: 25 min" shape=box]
+	"Station 6: Final Inspection
+Cycle Time: 10 min" [label="Station 6: Final Inspection
+Cycle Time: 10 min" shape=box]
+	End [label=End shape=ellipse]
+	Start -> "Station 1":" Material Preparation
+Cycle Time": 5 min
+	"Station 1":" Material Preparation
+Cycle Time": 5 min -> "Station 2":" Cutting
+Cycle Time": 10 min
+	"Station 2":" Cutting
+Cycle Time": 10 min -> "Station 3":" Welding
+Cycle Time": 15 min
+	"Station 3":" Welding
+Cycle Time": 15 min -> "Station 4":" Assembly
+Cycle Time": 20 min
+	"Station 4":" Assembly
+Cycle Time": 20 min -> "Station 5":" Painting
+Cycle Time": 25 min
+	"Station 5":" Painting
+Cycle Time": 25 min -> "Station 6":" Final Inspection
+Cycle Time": 10 min
+	"Station 6":" Final Inspection
+Cycle Time": 10 min -> End
+}

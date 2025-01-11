@@ -1,0 +1,32 @@
+// Manufacturing Process Flow Chart
+digraph {
+	Start [label=Start shape=ellipse]
+	"Material Inspection" [label="Material Inspection" shape=box]
+	"Inspection Passed?" [label="Inspection Passed?" shape=diamond]
+	Cutting [label=Cutting shape=box]
+	Welding [label=Welding shape=box]
+	"Welding Quality OK?" [label="Welding Quality OK?" shape=diamond]
+	Assembly [label=Assembly shape=box]
+	Painting [label=Painting shape=box]
+	"Painting Quality OK?" [label="Painting Quality OK?" shape=diamond]
+	"Final Inspection" [label="Final Inspection" shape=box]
+	"Final Quality OK?" [label="Final Quality OK?" shape=diamond]
+	Packaging [label=Packaging shape=box]
+	End [label=End shape=ellipse]
+	Start -> "Material Inspection"
+	"Material Inspection" -> "Inspection Passed?"
+	"Inspection Passed?" -> Cutting [label=yes]
+	"Inspection Passed?" -> "Material Inspection" [label=no]
+	Cutting -> Welding
+	Welding -> "Welding Quality OK?"
+	"Welding Quality OK?" -> Assembly [label=yes]
+	"Welding Quality OK?" -> Cutting [label=no]
+	Assembly -> Painting
+	Painting -> "Painting Quality OK?"
+	"Painting Quality OK?" -> "Final Inspection" [label=yes]
+	"Painting Quality OK?" -> Assembly [label=no]
+	"Final Inspection" -> "Final Quality OK?"
+	"Final Quality OK?" -> Packaging [label=yes]
+	"Final Quality OK?" -> Painting [label=no]
+	Packaging -> End
+}
