@@ -85,7 +85,6 @@ Ensure the required font files (e.g., Alegreya Sans SC) are available in the spe
 project-directory/
 |— pdfs_original/      # Folder containing input PDF files
 |— pdfs_translated/    # Folder where translated PDFs will be saved
-|— pdfs_samples/       # Folder containing random sample PDFs
 |— fonts/             # Folder containing custom fonts
 |— translation_log.txt # Log file for processing and error details
 ```
